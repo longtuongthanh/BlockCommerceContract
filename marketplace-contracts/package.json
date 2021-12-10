@@ -1,6 +1,6 @@
 {
     "name": "block-commerce-contract",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -9,9 +9,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Thomg102/UIT-SE301.M11-BidDapp.git"
+        "url": "https://github.com/longtuongthanh/BlockCommerceContract.git"
     },
-    "author": "",
+    "author": "BlockCommerceTeam",
     "license": "MIT",
     "dependencies": {
         "@openzeppelin/contracts": "^4.2.0",
@@ -21,7 +21,7 @@
         "truffle-plugin-verify": "^0.5.14"
     },
     "bugs": {
-        "url": "https://github.com/Thomg102/UIT-SE301.M11-BidDapp/issues"
+        "url": "https://github.com/longtuongthanh/BlockCommerceContract/issues"
     },
     "homepage": "https://blockcommerce.herokuapp.com"
 }
