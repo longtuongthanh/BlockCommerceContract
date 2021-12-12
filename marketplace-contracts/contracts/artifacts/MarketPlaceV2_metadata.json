@@ -1044,11 +1044,11 @@
 			]
 		},
 		"contracts/MarketplaceV2.sol": {
-			"keccak256": "0xd78e25fc8a7c9d5e20558cc6b27a15cae19c394148f783c7e2a77dfa098f2337",
+			"keccak256": "0x864599a6c6dfee1f2ede4993051db0fe1275f69b7d56b354792aa2907a90c5cf",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://8a9493601319b7aa2b07dcb276c52548a4a06ed30250b00860f318bb7596d790",
-				"dweb:/ipfs/QmNMEkt2MzcEQRLMrqbQ9LYm9Xtj3qV6jdFjP5y11vLyva"
+				"bzz-raw://c4c2e06cb747afdbc509da6a4f80552e576f9bb7f710b40c612fbdc069cf2443",
+				"dweb:/ipfs/QmUSRDNwCkMdXgMynkeqikYwwbLAk3cDiNjDDKs57UfQyf"
 			]
 		},
 		"contracts/interfaces/IMarketPlace.sol": {

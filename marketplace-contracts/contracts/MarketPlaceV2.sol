@@ -308,7 +308,7 @@ contract MarketPlaceV2 is Ownable, ISignable, IMarketPlace {
             _amount,
             _token20,
             msg.sender,
-            block.timestamp + _timeout // TODO: wrong logic
+            _timeout
         );
     }
 
