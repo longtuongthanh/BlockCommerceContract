@@ -1,0 +1,1072 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_artAddr",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "ApproveOffer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_token20",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_bargainer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_timeout",
+						"type": "uint256"
+					}
+				],
+				"name": "NewOffer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "approveOffer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "traransactionId",
+						"type": "string"
+					}
+				],
+				"name": "buyWithCurrency",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "buyWithETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "checkTransactionId",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_hashInfo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_hashImg",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "createNewProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getOffer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token20",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "bargainer",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "accepted",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeout",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IMarketPlace.Offer",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getOffer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token20",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "bargainer",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "accepted",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeout",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IMarketPlace.Offer[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getProducListOwnable",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "listing",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "selling",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "creator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IMarketPlace.Product[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getProductListCreated",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "listing",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "selling",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "creator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IMarketPlace.Product[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "imageExisted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_offerer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timeout",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_token20",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "lazyTransactViaOffer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timeout",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "lazyTransactViaPrice",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_token20",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timeout",
+						"type": "uint256"
+					}
+				],
+				"name": "offer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timeout",
+						"type": "uint256"
+					}
+				],
+				"name": "restartOffer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "selfDestruct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "sellers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_artAddr",
+						"type": "address"
+					}
+				],
+				"name": "setArtAddr",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "setListOrNot",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "setPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "setSellOrNot",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenIdToOffer",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token20",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "bargainer",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "accepted",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeout",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenIdToProduct",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "listing",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "selling",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "userToProduct",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "listing",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "selling",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"approveOffer(uint256,uint256)": {
+					"details": "See {IMarketplace-approveOffer}. Emits an {ApproveOffer} event indicating the successful approved offer Requirements: - `_tokenId`'s owner  must be selling on market place and approved for this contract - caller must be owner  of `_tokenId` product - `_timeout` of offer must be greater than current timestamp"
+				},
+				"buyWithCurrency(uint256,string)": {
+					"details": "See {IMarketplace-buyWithCurrency}. Requirements: - `_tokenId` product must be selling on market place - must be approved first - caller can not be owner of `_tokenId` - `traransactionId` haven't used yet"
+				},
+				"buyWithETH(uint256)": {
+					"details": "See {IMarketplace-buyWithETH}. Requirements: - `_tokenId` product must be selling on market place - must be approved first - send value ETH equal price of product - caller can not be owner of `_tokenId`"
+				},
+				"constructor": {
+					"details": "Sets the values for {art}. This value can be immutable: they can only be set once during construction."
+				},
+				"createNewProduct(string,string,uint256)": {
+					"details": "See {IMarketplace-createNewProduct}. Emits an {Transfer} event indicating the successful NFT generation Requirements: - `_hashImg` use only once."
+				},
+				"getOffer(uint256,uint256)": {
+					"details": "See {IMarketplace-getOffer}."
+				},
+				"getProducListOwnable(address)": {
+					"details": "See {IMarketplace-getProducListOwnable}."
+				},
+				"getProductListCreated(address)": {
+					"details": "See {IMarketplace-getProductListCreated}."
+				},
+				"offer(uint256,uint256,address,uint256)": {
+					"details": "See {IMarketplace-offer}. Emits an {NewOffer} event indicating the successful NewOffer generation Requirements: - `_tokenId`'s owner  must be selling on market place - `_token20` address can not address zero - caller must approve `_amount` token erc20 for this contract - `_timeout` must be time in the future"
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"restartOffer(uint256,uint256,uint256)": {
+					"details": "See {IMarketplace-restartOffer}. Requirements: - `_tokenId`'s owner  must be selling on market place - caller must be creator of offer - `_timeout` must be time in the future"
+				},
+				"setArtAddr(address)": {
+					"details": "See {IMarketplace-setArtAddr}. Requirements: - `_artAddr` cannot be the zero address. - Only owner have right to call this function."
+				},
+				"setListOrNot(uint256)": {
+					"details": "See {IMarketplace-setListOrNot}."
+				},
+				"setPrice(uint256,uint256)": {
+					"details": "See {IMarketplace-setPrice}. Requirements: - Only owner of `_tokenId` can call this function."
+				},
+				"setSellOrNot(uint256)": {
+					"details": "See {IMarketplace-setSellOrNot}."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/MarketplaceV2.sol": "MarketPlaceV2"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa1b27b3f44ff825974e5268e8f63ad3b03add5b464880d860fbb8cae043e17f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad0fb4425453220f15bdb8c4e009052839804bb725797b6d8c02ee2271bc3c23",
+				"dweb:/ipfs/QmPtjdMxzEifPUEUa6cKX1yfTWjaZV6QtdwMdN6bEL9FBM"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc1452b054778f1926419196ef12ae200758a4ee728df69ae1cd13e5c16ca7df7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb252ec7657ba7a91be688cbd263090aa5379e504f488a62d06198e0d630322",
+				"dweb:/ipfs/QmW56fDiDirhWfWiKrycXE5UY6tTNtFrYx39ipnSs8mkYb"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x671741933530f343f023a40e58e61bc09d62494b96c6f3e39e647f315facd519",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4082ea29d4cab3998038c2c5e37ed990e009a6d8814bbe82931173db7b6e63d5",
+				"dweb:/ipfs/QmaAwSn8ubftkwEYP3iU14f8VP7texzjWDXbopEEvm8LQF"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+			"keccak256": "0x1ba5cf152c15dc0c785310feeb61e1f74387fc7bdc2aba5d90733f791606d4bf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://38db14c62d6431df042a7ca07fd021ea52ccdbd03f0be2b5c4ab034a56126d38",
+				"dweb:/ipfs/QmbCHTCLP6bz8omQXrP8VuxFGdK9Hh3jqfrSTr38WNpTk4"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x872ba21af7c1f0ae04a715beca31e8fcac764d6c8762940b0fe1bfb6ed8e86f4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://497017741d74878b56a67ad51e98061bd9ec0e6e4fdbfef0e2ab51523f4c16de",
+				"dweb:/ipfs/QmWfkpRHksy8jFywqYxdmMqdkQ1hxrGTPoNBXbZ48zTvyv"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0x483b106386dd309f168672928252a19f30c30efb4d17d4b8e2b0f587ca784a11",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://189a39d066c6886ddbe86c79bb36d6cbe66e98bc6a94956e28f5503dae4ad406",
+				"dweb:/ipfs/QmT3s3PwCdXqHLJk26kcnedrRGTC9T18z52i9Be7PV9ppc"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
+			"keccak256": "0x95b01a0017e74216dc94e5babd5a7b0fbabab160347349e51789e75ebb130e4a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5aa621ae63904efeeb4c626edf07da0acf4b3c3eb6bef1d2f5215023e4dc9f83",
+				"dweb:/ipfs/QmTDk9fG65qquWQ2VXhacZmiUBYS4ZJgr6HqHdeBC7Xwfs"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+			"keccak256": "0x6052c25b1021f2b0e733fb52ca11948cb2f08cb66076397507243a6e8a8d7776",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://32ac4547a76b28021a007853958284aa8a15a64f1aeec83cb797b7fd60a46b56",
+				"dweb:/ipfs/QmTJWQF8j586oaYNpdZv55xnzyHVQc68XN4eBNeiLbKX8d"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x9944d1038f27dcebff810d7ba16b3b8058b967173d76874fb72dd7cd84129656",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7c455cda07c5f8978c57e545ddde382552d3a55b6e3682e0f809ed07ec7defbe",
+				"dweb:/ipfs/QmXkoKbxyMcMzjYdkXi5t4t3ZjBQ81pj7AaanS9jhePxyt"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x7736c187e6f1358c1ea9350a2a21aa8528dec1c2f43b374a9067465a3a51f5d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4fd625dca17657403af518cc6c8ab5c54c58898cf6e912ca2e1b0f3194ad0405",
+				"dweb:/ipfs/QmQVv7YeeKmaS11bg7YDTeeGDk6i7sV8LMMfohaLM4SiRu"
+			]
+		},
+		"@openzeppelin/contracts/utils/Counters.sol": {
+			"keccak256": "0x74f630d2664c1581a1cbd0730d4ba119b3a184ef90c65f3a934be4d16d0e58a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cadad0b133129f946a53e0f61fa387803ccdc010d9c794da0738bb7fc5001b66",
+				"dweb:/ipfs/QmQdTBpUT9WgDuCm7womDFiAnksepw6Fmi5Z5vv1H17Qr1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0x5fa25f305839292fab713256214f2868e0257d29826b14282bbd7f1e34f5af38",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3de4074848249e00e1336db857e3fa8f78b4fe11d4a887f71050c22023b2132",
+				"dweb:/ipfs/QmbL6k2zFGndQPNPG7vCDivtjKam3quJSrEbRuVsNo4hBw"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x905cd0ecd91d1de79a4679d745b79cf852ca8ccda5d25d1c49c6bd17a5edc0cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8dd1601fcd370546d8c06ea1902d7e7364fc490fbf0ebc3004230ef1f5db473c",
+				"dweb:/ipfs/Qmb8zbC3TjWFtcuyP3KEEaegMkPcfeKAcPrwzvkAoMR3cZ"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
+				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
+			]
+		},
+		"contracts/Art.sol": {
+			"keccak256": "0x7ca696f48e587152995e155975f98237dae3c75a664ad495c2bc1b11cbdfe3f0",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://315805633c71fe80a12e1f9f45cf4be343db67897f30144ff4b31fa76b9f6fcd",
+				"dweb:/ipfs/QmfSsBiJX5LmKtq5uW7t2MRjDzdc4Def6xC7HHxfcyN72e"
+			]
+		},
+		"contracts/MarketplaceV2.sol": {
+			"keccak256": "0xd78e25fc8a7c9d5e20558cc6b27a15cae19c394148f783c7e2a77dfa098f2337",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://8a9493601319b7aa2b07dcb276c52548a4a06ed30250b00860f318bb7596d790",
+				"dweb:/ipfs/QmNMEkt2MzcEQRLMrqbQ9LYm9Xtj3qV6jdFjP5y11vLyva"
+			]
+		},
+		"contracts/interfaces/IMarketPlace.sol": {
+			"keccak256": "0x68a394d9aec61390ebf9c61bf6d5e8e55ee70a9de90eef8adb0ba5d4c5b1aa27",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ff31bcfd56c69795a637b8aec56e3cdf9642e6a00d8895919d44e7f7e486a476",
+				"dweb:/ipfs/QmWN8eD9C7sLZ8yrgkjXwtfL6rEZ5SXZEXq3jHRPmUdBMJ"
+			]
+		},
+		"contracts/interfaces/ISignable.sol": {
+			"keccak256": "0x7befff4dc3b6eb4b5cb76fce0acf0b5bab81e24860ece3630f6c3a29c5f43ea3",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://198d2f1764d506ac41786b2b3e2395d30f5cc914b36193301f1b47db03e019a1",
+				"dweb:/ipfs/QmdaDDFaP4gdiARnHyBu6NK5CCinJJ4NVBxFn9oXzo5i42"
+			]
+		}
+	},
+	"version": 1
+}
