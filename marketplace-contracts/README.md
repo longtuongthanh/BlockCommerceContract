@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+<div id="top"></div>
+</br>
+<div align="center">
+  <img src="https://i.ibb.co/xHDbBM5/Block-Commerce-Logo-Rendered.png" alt="BlockCommerce Logo_Rendered" width="100" height = "100">
+  <h3>BlockCommerce</h3>
+	<p>A good tool for setting up Ethereum-based marketplace applications</p>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- ABOUT THE PROJECT -->
+## About The Project
+Provide you with a package secured by Blockchain and Smart Contract to build, manage and revise all aspects between bulding and developing software for Ethereum-based marketplace projects.
 
-## Available Scripts
+### Built with
+* [Ethereum](https://ethereum.org/en/)
+* [Solidity](https://docs.soliditylang.org/en/v0.8.10/)
+* [Web3js](https://web3js.readthedocs.io/en/v1.5.2/)
+<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
 
-In the project directory, you can run:
+## Setting Up
+This section is all about relevant softwares, extensions and how to install this package.
+### Prerequisites
+For using BlockCommerce, you need first to have metamask available in your browser.
+</br>
+- Download metamask [here](https://metamask.io/download.html) (Choose the firefox to download it to your browser).
+- See how to use metamask [here](https://metamask.io/faqs.html).
+### Installation
+Use the package manager [npm](https://docs.npmjs.com/) to install.
+- npm
+```
+  npm install npm@latest -g
+```
+- block-commerce-contract
+```
+  npm install block-commerce-contract
+```
 
-### `npm start`
+<!-- FEATURES -->
+## Features
+Below are what BlockCommerce will provide for you:
+- Contract: A smart library contract consists of a contract that creates, stores the NFT and a contract that serves its role as a marketplace for selling and exchanging NFTs. These contracts can be reused, secured and stored on blockchain, and are written by Solidity. Besides, all the functions are authorized according to the account's role. 
+- Upgradable contract: A set of contract and tool is used for creating and managing contracts, it allows for the separation of upgradeable contracts on Ethereum.
+- Lazy minting: Advanced feature, this helps the seller not to pay any fee from the time a product is created to the time it is sold. The fee in the end will be paid by the end user.
+- Authorization: Advanced feature, this helps both the seller and buyer can controll the contract by themselves and execute it as they wished, instead of the inherent automatic execution of the contract.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- Example -->
+## Example
+These are some code snippets to help you have a better understand what block-commerce-contract can do.
+- Generate a NFT with the recipient's address _to be obtained from the _hash of the artwork
+```
+createNewNFT(_to, string _hash)
+```
+- Reset the owner rights for a _to address with the _tokenId token you want to transfer, this function is only called by the owner of _tokenId.
+```
+setOwnerToTokenId(_to, _tokenId)
+```
+- Create a new product for selling with with hashed information (_hashInfo), hashed image (_hashImg), and the desired price (_price) for this product
+```
+createNewProduct(_hashInfo, _hashImg,  _price)
+```
+- Buy the product with ETH cryptocurrency
+```
+buyWithETH(_tokenId)
+```
+- Buy the product with dollar currency
+```
+buyWithCurrency(_tokenId, transactionId)
+```
+- Create an offer for a product has id (_tokenId), with quantity of _amount, token ERC20 (_token20) as you wish, and the desired price (_price) for this product
+```
+offer(_tokenId, _amount, _token20, _timeout)
+```
+- Approve an offer
+```
+approveOffer(_tokenId, _index)
+```
+- Transfer owner after the offer was approved
+```
+Transfer(_tokenId, _oldOwner, _newOwner)
+```
+<!-- Usage -->
+## Usage
+For better understanding on how to use block-commerce-contract for an Ethereum-based marketplace web application, you can go to [this website](https://blockcommerce.herokuapp.com/products).
+Some functions are currently availble:
+- Create a new product.
+- Create an offer.
+- Approve an offer.
+- Buy a product with ETH or other currency (currently Dollar).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div align="center">
+	<img src="https://i.ibb.co/6rZL0j9/Block-Commerce-Logo-homepage.png" alt="BlockCommerce Homepage" border="0">
+</div>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- Contributors -->
+## Creators
+We wish to give a big thanks to our contributors for building this project together and bringing it to life.
+- [Mai Nguyen Duc Tho](https://github.com/Thomg102)
+- [Tuong Thanh Long](https://github.com/longtuongthanh)
+- [Nguyen Phuc Long](https://github.com/Sportaholic-21)
+- [Truong Thi Y Lan](https://github.com/ylantt)
+- [Phan Hoang Dung](https://github.com/PhanHoangDung)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- LICENSE -->
+## License
+Distributed under MIT license. See `LICENSE.md` for more infomation.
