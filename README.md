@@ -1,8 +1,9 @@
 <div id="top"></div>
+</br>
 <div align="center">
   <img src="https://i.ibb.co/xHDbBM5/Block-Commerce-Logo-Rendered.png" alt="BlockCommerce Logo_Rendered" width="100" height = "100">
   <h3>BlockCommerce</h3>
-	<p>A good tool for setting up marketplace web applications</p>
+	<p>A good tool for setting up Ethereum-based marketplace applications</p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
@@ -46,51 +47,35 @@ Below are what BlockCommerce will provide for you:
 These are some code snippets to help you have a better understand what block-commerce-contract can do.
 - Generate a NFT with the recipient's address _to be obtained from the _hash of the artwork
 ```
-createNewNFT(_to, string _hash){
-	// Your code here
-}
+createNewNFT(_to, string _hash)
 ```
 - Reset the owner rights for a _to address with the _tokenId token you want to transfer, this function is only called by the owner of _tokenId.
 ```
-setOwnerToTokenId(_to, _tokenId){
-	// Your code here
-}
+setOwnerToTokenId(_to, _tokenId)
 ```
 - Create a new product for selling with with hashed information (_hashInfo), hashed image (_hashImg), and the desired price (_price) for this product
 ```
-createNewProduct(_hashInfo, _hashImg,  _price){
-	// Your code here
-}
+createNewProduct(_hashInfo, _hashImg,  _price)
 ```
 - Buy the product with ETH cryptocurrency
 ```
-buyWithETH(_tokenId){
-	// Your code here
-}
+buyWithETH(_tokenId)
 ```
 - Buy the product with dollar currency
 ```
-buyWithCurrency(_tokenId, transactionId){
-	// Your code here
-}
+buyWithCurrency(_tokenId, transactionId)
 ```
 - Create an offer for a product has id (_tokenId), with quantity of _amount, token ERC20 (_token20) as you wish, and the desired price (_price) for this product
 ```
-offer(_tokenId, _amount, _token20, _timeout){
-	// Your code here
-}
+offer(_tokenId, _amount, _token20, _timeout)
 ```
 - Approve an offer
 ```
-approveOffer(_tokenId, _index){
-	// Your code here
-}
+approveOffer(_tokenId, _index)
 ```
 - Transfer owner after the offer was approved
 ```
-Transfer(_tokenId, _oldOwner, _newOwner){
-	// Your code here
-}
+Transfer(_tokenId, _oldOwner, _newOwner)
 ```
 <!-- Usage -->
 ## Usage
@@ -107,8 +92,8 @@ Some functions are currently availble:
 
 
 <!-- Contributors -->
-## Contributors
-We wish to give a big thanks to our contributors for building this project together and bringing it to you.
+## Creators
+We wish to give a big thanks to our contributors for building this project together and bringing it to life.
 - [Mai Nguyen Duc Tho](https://github.com/Thomg102)
 - [Tuong Thanh Long](https://github.com/longtuongthanh)
 - [Nguyen Phuc Long](https://github.com/Sportaholic-21)
@@ -117,4 +102,4 @@ We wish to give a big thanks to our contributors for building this project toget
 
 <!-- LICENSE -->
 ## License
-Distributed under MIT license. See `LICENSE.txt` for more infomation.
+Distributed under MIT license. See `LICENSE.md` for more infomation.
