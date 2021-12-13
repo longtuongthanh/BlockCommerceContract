@@ -1,6 +1,6 @@
 {
     "name": "block-commerce-contract",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -23,5 +23,5 @@
     "bugs": {
         "url": "https://github.com/longtuongthanh/BlockCommerceContract/issues"
     },
-    "homepage": "https://blockcommerce.herokuapp.com"
+    "homepage": "https://peaceful-stonebraker-76bb1c.netlify.app/"
 }
