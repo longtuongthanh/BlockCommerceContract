@@ -79,7 +79,7 @@ Transfer(_tokenId, _oldOwner, _newOwner)
 ```
 <!-- Usage -->
 ## Usage
-For better understanding on how to use block-commerce-contract for an Ethereum-based marketplace web application, you can go to [this website](https://blockcommerce.herokuapp.com/products).
+For better understanding on how to use block-commerce-contract for an Ethereum-based marketplace web application, you can go to [this website](https://peaceful-stonebraker-76bb1c.netlify.app/).
 Some functions are currently availble:
 - Create a new product.
 - Create an offer.
