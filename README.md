@@ -29,7 +29,7 @@ Use the package manager [npm](https://docs.npmjs.com/) to install.
 ```
   npm install npm@latest -g
 ```
-- block-commerce-contract
+- [block-commerce-contract package from npm](https://www.npmjs.com/package/block-commerce-contract)
 ```
   npm install block-commerce-contract
 ```
